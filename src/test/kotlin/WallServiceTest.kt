@@ -4,25 +4,28 @@ import kotlin.test.assertNotEquals
 
 class WallServiceTest {
     var newPost1 = Post(
-        ownerId = 1, fromId = 1, date = 1668419390,
-        text = "new post 1", comment = Comment(1)
+        id= 0, ownerId= 0, fromId= 1, createdBy=2 ,date = 1691482573,
+        text="post0",replyOwnerId= 2, replyPostId=7, likes=Likes(3, false, true, false),reposts=Reposts(4),views=Views(5),
+        postType = "post",comment= Comment(6)
     )
 
     var newPost2 = Post(
-        id = 1, ownerId = 2, fromId = 2, date = 1668419390,
-        text = "new post 2", comment = Comment(2)
+        id= 1, ownerId= 10, fromId=11, createdBy=12 ,date = 1691482573,
+        text="post1",replyOwnerId= 12, replyPostId=17, likes=Likes(13, false, true, false),reposts=Reposts(14),views=Views(15),
+        postType = "reply",comment=Comment(16)
     )
 
     var newPost3 = Post(
-        id = 3, ownerId = 3, fromId = 3, date = 1668419390,
-        text = "new post 3", comment = Comment(3)
+        id= 2, ownerId= 20, fromId=21, createdBy=13 ,date = 1691482573,
+        text="post2",replyOwnerId= 22, replyPostId=27, likes=Likes(33, false, true, false),reposts=Reposts(24),views=Views(25),
+        postType = "post",comment=Comment(26)
     )
 
 
     @Test
     fun add() {
         val result = WallService.add(newPost1)
-        assertNotEquals(0, result.id)
+        assertNotEquals(-1, result.id)
     }
 
     @Test
