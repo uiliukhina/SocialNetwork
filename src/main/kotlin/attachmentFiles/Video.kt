@@ -55,8 +55,6 @@ class Video (
     /*0 — Не добавлено.
     1 — Добавлено.*/
     val is_subscribed:Boolean=false,//Подписан ли пользователь на автора видео.
-    /*0 — Не подписан.
-    1 — Подписан.*/
     val repeat:Int,//Поле возвращается в том случае, если видео зациклено, всегда содержит 1
     val type:String,//Тип видеозаписи. Может принимать значения: "video", "music_video", "movie".
     val balance:Int?=null,//	Баланс донатов в прямой трансляции.
@@ -68,4 +66,29 @@ class Video (
     val spectators:Int?=null,//Количество зрителей прямой трансляции.
     val likes:LikesVideo,
     val reposts:RepostsVideo
+)
+
+data class RepostsVideo(
+    val count:Int,
+    val wallCount:Int,
+    val mailCount :Int,
+    val userReposted:Boolean
+)
+
+data class LikesVideo(
+    val count:Int,
+    val userLikes:Boolean
+)
+
+data class Image(
+    val height:Int,
+    val url:String,
+    val width:Int,
+    val withPadding:Boolean
+)
+
+data class FirstFrame(
+    val height:Int,
+    val url:String,
+    val width:Int
 )
