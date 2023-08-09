@@ -8,7 +8,7 @@ data class Post(
     val replyOwnerId: Int, // Идентификатор владельца записи, в ответ на которую была оставлена текущая
     val replyPostId: Int, // Идентификатор записи, в ответ на которую была оставлена текущая
     val friendsOnly: Boolean = true,
-    val copyright: Copyright? = null ,
+    val copyright: Copyright? = null,
     val likes: Likes,
     val reposts: Reposts,
     val views: Views,
@@ -26,7 +26,7 @@ data class Post(
     val isFavorite: Boolean = false,//   true, если объект добавлен в закладки у текущего пользователя
     val donut: Donut?= null,
     val postponedId: Int?= null,
-    val comment: Comment
-
-    )
+    val comment: Comment,
+    val attachment: Array<Attachment>?=null
+)
 
